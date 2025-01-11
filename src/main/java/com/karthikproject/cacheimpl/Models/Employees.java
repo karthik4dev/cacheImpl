@@ -2,6 +2,8 @@ package com.karthikproject.cacheimpl.Models;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
@@ -11,9 +13,13 @@ import lombok.*;
 @AllArgsConstructor
 @Builder(toBuilder = true)
 public class Employees {
+
     @Id
-    private int EmployeeId;
-    private String EmployeeName;
-    private int DeptID;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int employeeId;
+    private String employeeName;
+    private int deptID;
     private String email;
+
+    Employees(){}
 }

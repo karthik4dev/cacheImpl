@@ -20,7 +20,10 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public void saveEmployees(Employees employees) {
-        employeeRepository.save(employees);
+        Employees employee1=Employees.builder().employeeName(employees.getEmployeeName())
+                .email(employees.getEmail()).deptID(employees.getDeptID()).build();
+        log.info("Employee "+employee1.getEmployeeName()+" saved to H2");
+        employeeRepository.save(employee1);
     }
 
     @Cacheable(cacheNames = "employee")
