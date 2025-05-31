@@ -5,6 +5,6 @@
 3. ~~dont fork my repo as my updates will be gone :angry:~~ will be reviewed later if you push new update.
 4. Docker image coming soon ... :smirk:
 
-Normal Tests are being written over Mockito 
-Once i have time to learn Mockito , will be implemented for all classes.
+Normal Tests are being written now.
+Once I have time to learn Mockito , will be implemented for all classes. :grin:
 
