@@ -1,5 +1,6 @@
 package com.karthikproject.cacheimpl.Controllers;
 
+import com.karthikproject.cacheimpl.DataTransferObjects.APIDTO;
 import com.karthikproject.cacheimpl.Models.Employees;
 import com.karthikproject.cacheimpl.Services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,5 +21,10 @@ public class EmployeeController {
     @PostMapping("/save")
     public void saveEmployee(@RequestBody Employees employees){
         employeeService.saveEmployees(employees);
+    }
+
+    @GetMapping("/api/{id}")
+    public APIDTO getWholeAPI(@PathVariable int id){
+        return employeeService.getAPI(id);
     }
 }
