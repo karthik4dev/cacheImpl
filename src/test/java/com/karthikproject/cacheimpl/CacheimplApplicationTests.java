@@ -5,13 +5,16 @@ import com.karthikproject.cacheimpl.Models.Employees;
 import com.karthikproject.cacheimpl.Services.EmployeeService;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.matchers.NotNull;
+
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.boot.test.context.SpringBootTest;
+
 import org.springframework.test.annotation.Rollback;
+
 import org.springframework.util.Assert;
 
-import static org.springframework.util.Assert.isNull;
+
 
 @SpringBootTest
 class CacheimplApplicationTests {
@@ -21,7 +24,6 @@ class CacheimplApplicationTests {
 
 	@Autowired
 	EmployeeService employeeService;
-
 
 	@Test
 	void getEmployeeTest(){
@@ -40,8 +42,9 @@ class CacheimplApplicationTests {
 		Employees emp2= employeeController.getEmployeesByID(1).orElseThrow();
 
 		Assert.notNull(emp2,"No Object Found");
-
 	}
+
+
 
 	@Test
 	void contextLoads() {
