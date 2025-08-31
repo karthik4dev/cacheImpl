@@ -4,6 +4,7 @@ import com.karthikproject.cacheimpl.Controllers.EmployeeController;
 import com.karthikproject.cacheimpl.Models.Employees;
 import com.karthikproject.cacheimpl.Services.EmployeeService;
 import jakarta.transaction.Transactional;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,7 @@ class CacheimplApplicationTests {
 		Assert.notNull(emp1,"Null");
 	}
 
+	@DisplayName("Test employee can be saved using service")
 	@Test
 	@Transactional
 	@Rollback
