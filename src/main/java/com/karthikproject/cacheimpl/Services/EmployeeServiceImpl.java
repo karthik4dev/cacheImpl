@@ -20,6 +20,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Autowired
     EmployeeRepository employeeRepository;
 
+    @Autowired
     private ApiClient apiClient;
 
 
