@@ -6,6 +6,7 @@ log/
 !**/src/main/**/build/
 !**/src/test/**/build/
 gradle.properties
+src/main/resources/log/*
 
 ### STS ###
 .apt_generated
