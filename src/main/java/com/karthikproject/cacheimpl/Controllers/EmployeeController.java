@@ -1,6 +1,7 @@
 package com.karthikproject.cacheimpl.Controllers;
 
 import com.karthikproject.cacheimpl.DataTransferObjects.APIDTO;
+import com.karthikproject.cacheimpl.Exceptions.NoObjectFoundException;
 import com.karthikproject.cacheimpl.Models.Employees;
 import com.karthikproject.cacheimpl.Services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,8 @@ public class EmployeeController {
 
 
     @GetMapping("/{id}")
-    public Optional<Employees> getEmployeesByID(@PathVariable int id){
-        return employeeService.getEmployeeById(id);
+    public Employees getEmployeesByID(@PathVariable int id){
+        return employeeService.getEmployeeById(id).orElseThrow(() -> new NoObjectFoundException("Cannot find object with ID"));
     }
 
     @PostMapping("/save")
