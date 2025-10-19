@@ -6,6 +6,7 @@ import com.karthikproject.cacheimpl.Models.Employees;
 import com.karthikproject.cacheimpl.Services.EmployeeService;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,10 +17,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.util.Assert;
 
-import java.util.NoSuchElementException;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 
 @SpringBootTest
@@ -30,6 +31,13 @@ class CacheimplApplicationTests {
 
 	@Autowired
 	EmployeeService employeeService;
+	Employees employee;
+
+	@BeforeEach
+	public void createEmployee(){
+		employee= Employees.builder().employeeId(1).employeeName("Karthik P N").deptID(2).email("kpnzeus@gmail.com").build();
+
+	}
 
 	@Test
 	void getEmployeeTest(){
@@ -43,8 +51,7 @@ class CacheimplApplicationTests {
 	@Transactional
 	@Rollback
 	void saveEmployeeTest(){
-		Employees emp1= Employees.builder().employeeId(1).employeeName("Karthik P N").deptID(2).email("kpnzeus@gmail.com").build();
-		employeeController.saveEmployee(emp1);
+		employeeController.saveEmployee(this.employee);
 		Employees emp2= employeeController.getEmployeesByID(1);
 
 		Assert.notNull(emp2,"No Object Found");
