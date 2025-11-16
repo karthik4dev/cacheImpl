@@ -11,7 +11,11 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
+        http.authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/api-docs").permitAll() //for API DOCS
+                        .requestMatchers("/actuator/**").permitAll() //for actuator
+                        .requestMatchers("/swagger-ui/index.html").permitAll() //for swagger ui
+                        .anyRequest().authenticated())
                 .oauth2ResourceServer(httpSecurityOAuth2ResourceServerConfigurer -> {
                     httpSecurityOAuth2ResourceServerConfigurer.jwt(Customizer.withDefaults());
                 });

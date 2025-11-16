@@ -22,5 +22,4 @@ public class Employees {
     private int deptID;
     @Column(name = "Email")
     private String email;
-
 }

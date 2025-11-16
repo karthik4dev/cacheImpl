@@ -1,5 +1,6 @@
 package com.karthikproject.cacheimpl.Configurations;
 
+import com.karthikproject.cacheimpl.Models.Employees;
 import com.karthikproject.cacheimpl.Services.EmployeeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,8 @@ public class CommandLine implements CommandLineRunner {
         Thread.sleep(1000);
         log.warn("Sleep for 10 secs");
         System.err.printf("%s\n",Thread.currentThread());
+        this.employeeService.saveEmployees(Employees.builder().employeeId(1).employeeName("Admin")
+                .email("Admin@gmail.com").deptID(2).build());
     }
 
 }
