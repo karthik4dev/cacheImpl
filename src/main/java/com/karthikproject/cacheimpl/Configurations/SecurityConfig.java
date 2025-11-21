@@ -15,7 +15,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/v3/api-docs/**").permitAll() //for API DOCS
                         .requestMatchers("/actuator/**").permitAll() //for actuator
-//                        .requestMatchers("/swagger-ui/**").permitAll() //for swagger ui
+                        .requestMatchers("/swagger-ui/**").permitAll() //for swagger ui
                         .anyRequest().authenticated())
                 .oauth2ResourceServer(httpSecurityOAuth2ResourceServerConfigurer -> {
                     httpSecurityOAuth2ResourceServerConfigurer.jwt(Customizer.withDefaults());

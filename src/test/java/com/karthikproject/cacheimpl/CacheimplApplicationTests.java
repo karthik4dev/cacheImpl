@@ -29,14 +29,12 @@ class CacheimplApplicationTests {
 	@Autowired
 	EmployeeController employeeController;
 
-	@Autowired
-	EmployeeService employeeService;
+
 	Employees employee;
 
 	@BeforeEach
 	public void createEmployee(){
 		employee= Employees.builder().employeeId(1).employeeName("Karthik P N").deptID(2).email("kpnzeus@gmail.com").build();
-
 	}
 
 	@Test
