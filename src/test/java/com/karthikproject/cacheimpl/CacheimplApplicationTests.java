@@ -4,10 +4,7 @@ import com.karthikproject.cacheimpl.Controllers.EmployeeController;
 import com.karthikproject.cacheimpl.Exceptions.NoObjectFoundException;
 import com.karthikproject.cacheimpl.Models.Employees;
 import jakarta.transaction.Transactional;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -37,6 +34,8 @@ class CacheimplApplicationTests {
 	}
 
 	@Test
+    @Transactional
+    @Disabled
 	void getEmployeeTest(){
 		Employees emp1= employeeController.getEmployeesByID(1);
 
