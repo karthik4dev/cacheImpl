@@ -3,7 +3,6 @@ package com.karthikproject.cacheimpl;
 import com.karthikproject.cacheimpl.Controllers.EmployeeController;
 import com.karthikproject.cacheimpl.Exceptions.NoObjectFoundException;
 import com.karthikproject.cacheimpl.Models.Employees;
-import com.karthikproject.cacheimpl.Services.EmployeeService;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
