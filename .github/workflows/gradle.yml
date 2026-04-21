@@ -58,7 +58,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build docker image
-      run: docker build -t karthikpnrao/privaterepo --build-args JAR_VERSION=${{ steps.version.outputs.version }} .
+      run: docker build -t karthikpnrao/privaterepo --build-arg JAR_VERSION=${{ steps.version.outputs.version }} .
 
     - name: Tag Docker image
       run: docker tag karthikpnrao/privaterepo karthikpnrao/privaterepo:${{ steps.version.outputs.version }}
