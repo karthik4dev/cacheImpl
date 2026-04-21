@@ -1,5 +1,6 @@
 FROM eclipse-temurin:21
 EXPOSE 8080
 ADD . /usr/local/cacheimpl
-COPY /build/libs/cacheimpl-0.0.1-SNAPSHOT.jar /usr/local/cacheimpl/cacheimpl-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java", "-jar", "/usr/local/cacheimpl/cacheimpl-0.0.1-SNAPSHOT.jar"]
+ARG JAR_VERSION=1.0
+COPY /build/libs/cacheimpl-$JAR_VERSION.jar /usr/local/cacheimpl/cacheimpl-$JAR_VERSION.jar
+ENTRYPOINT ["java", "-jar", "/usr/local/cacheimpl/cacheimpl-$JAR_VERSION.jar"]
