@@ -43,9 +43,6 @@ jobs:
     - name: Build with Gradle Wrapper
       run: ./gradlew build -x test
 
-    - name: scan the build using gradle build scanner
-      run: gradle build --scan -x test
-
     - name: Get version number from Gradle
       run: |
         sed -n '8p' build.gradle | sed s/": "/"="/g| sed s/"'"/""/g|sed s/" "/""/g > "$GITHUB_OUTPUT" && cat $GITHUB_OUTPUT
