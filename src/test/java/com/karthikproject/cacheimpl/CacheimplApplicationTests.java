@@ -35,7 +35,6 @@ class CacheimplApplicationTests {
 
 	@Test
     @Transactional
-    @Disabled
 	void getEmployeeTest(){
 		Employees emp1= employeeController.getEmployeesByID(1);
 
